@@ -1,15 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
 
-import './index.css';
+const myItems = [
+  {
+    id: 1,
+    label: 'History of JavaScript frameworks'
+  },
+  {
+    id: 2,
+    label: 'Learning Styled Components'
+  }
+];
+
+const MyParagraph = styled.p`
+  text-align: center;
+  font-weight: ${props => props.emphasize ? 'bold' : 'normal'};
+`;
 
 const MyApplication =  () => <div>
-  <p className="normal-paragraph">
-    Hello, I am regular paragraph styled with basic CSS.
-  </p>
-  <p className="special-paragraph">
-    Hello, I another paragraph styled differently.
-  </p>
+  <MyParagraph>
+    This is my To-Do list
+  </MyParagraph>
+  <MyParagraph emphasize={true}>
+    Re:Coded is great!
+  </MyParagraph>
 </div>;
 
 ReactDOM.render(
